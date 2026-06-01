@@ -1,0 +1,291 @@
+/* ========================================================================
+   Cherry — colors & type tokens   (v2 — modern fintech)
+   Brand: Cherry e.V. — investing, made for women.
+   Visual direction: clean .io / fintech (N26-class), not retro editorial.
+   White canvas · bold geometric sans · cherry red as a punchy accent ·
+   generous whitespace · soft tonal greys · zero clutter.
+   ======================================================================== */
+
+/* Body: Inter / Plus Jakarta — clean geometric sans (N26-style).
+   Display: a slightly tighter version of the same sans, NOT a serif.
+   Mono: ui-monospace stack.
+   Italics + serifs are reserved for tiny editorial accents (a single
+   word in a hero, e.g. *money*) — never for whole headlines. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  /* ============================================================
+     COLOR — cherry-red accent on a clean white/neutral canvas
+     ============================================================ */
+
+  /* Reds — the signal color */
+  --cherry-50:  #fff1f0;
+  --cherry-100: #ffdcd8;
+  --cherry-200: #ffb4ad;
+  --cherry-300: #ff857b;
+  --cherry-400: #ff4f43;
+  --cherry-500: #f31a09;   /* PRIMARY — buttons, links, accents */
+  --cherry-600: #d3140a;
+  --cherry-700: #a8120c;
+  --cherry-800: #6f1410;
+  --cherry-900: #3a0908;   /* deep — used sparingly, eg dark panels */
+
+  /* Neutrals — modern, very slightly warm. Not slate (cool) and not cream (retro). */
+  --neutral-0:    #ffffff;
+  --neutral-25:   #fbfaf9;   /* near-white surfaces */
+  --neutral-50:   #f5f3f1;   /* page background option */
+  --neutral-100:  #ebe8e5;
+  --neutral-200:  #d8d4cf;
+  --neutral-300:  #b9b3ac;
+  --neutral-400:  #8c857d;
+  --neutral-500:  #66605a;
+  --neutral-600:  #4a4540;
+  --neutral-700:  #2f2c29;   /* near-black */
+  --neutral-800:  #1a1817;
+  --neutral-900:  #0e0d0c;   /* near-black, subtle warmth */
+
+  /* Pure */
+  --white:      #ffffff;
+  --black:      #000000;
+
+  /* ============================================================
+     SEMANTIC COLOR
+     ============================================================ */
+  --bg:               var(--neutral-0);     /* default: clean white */
+  --bg-soft:          var(--neutral-25);    /* alt section */
+  --bg-muted:         var(--neutral-50);    /* card backgrounds */
+  --bg-elevated:      var(--white);
+  --bg-deep:          var(--neutral-900);   /* dark sections */
+  --bg-cherry:        var(--cherry-500);    /* full-cherry hero panels */
+
+  --fg:               var(--neutral-900);   /* primary text */
+  --fg-muted:         var(--neutral-500);   /* secondary text */
+  --fg-subtle:        var(--neutral-400);   /* tertiary */
+  --fg-on-deep:       var(--neutral-25);
+  --fg-on-cherry:     var(--white);
+
+  --accent:           var(--cherry-500);
+  --accent-hover:     var(--cherry-600);
+  --accent-press:     var(--cherry-700);
+  --accent-soft:      var(--cherry-50);     /* tint backgrounds, badges */
+  --link:             var(--cherry-500);
+  --link-hover:       var(--cherry-700);
+
+  --border:           var(--neutral-100);   /* hairline */
+  --border-strong:    var(--neutral-200);
+  --border-on-deep:   rgba(255, 255, 255, 0.14);
+
+  /* Status — fintech-clean */
+  --success:          #2e7d4f;
+  --warning:          #c98214;
+  --danger:           var(--cherry-600);
+
+  /* ============================================================
+     TYPE
+     ============================================================ */
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:   'Instrument Serif', 'Times New Roman', Georgia, serif;  /* italic accent only */
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale — confident, modern */
+  --fs-display-xl: clamp(3rem, 7vw, 6rem);       /* hero "Let's talk money" */
+  --fs-display-lg: clamp(2.25rem, 4.5vw, 4rem);  /* page titles */
+  --fs-display-md: clamp(1.75rem, 3vw, 2.75rem); /* section titles */
+  --fs-h1:         clamp(1.75rem, 2.6vw, 2.25rem);
+  --fs-h2:         clamp(1.375rem, 2vw, 1.75rem);
+  --fs-h3:         1.25rem;     /* 20 */
+  --fs-h4:         1.0625rem;   /* 17 */
+  --fs-lead:       1.1875rem;   /* 19 */
+  --fs-body:       1rem;        /* 16 */
+  --fs-small:      0.875rem;    /* 14 */
+  --fs-micro:      0.75rem;     /* 12 — labels, eyebrows */
+
+  --lh-tight:      1.02;
+  --lh-snug:       1.15;
+  --lh-normal:     1.5;
+  --lh-relaxed:    1.6;
+
+  --tracking-tighter: -0.04em;   /* big display */
+  --tracking-tight:   -0.02em;   /* headlines */
+  --tracking-normal:  -0.005em;  /* body — a hair tight */
+  --tracking-wide:    0.04em;
+  --tracking-eyebrow: 0.14em;    /* eyebrow caps */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    800;
+
+  /* ============================================================
+     SHAPE / SHADOW / MOTION
+     ============================================================ */
+  --radius-pill:   999px;
+  --radius-2xl:    24px;
+  --radius-xl:     16px;
+  --radius-lg:     12px;
+  --radius-md:     8px;
+  --radius-sm:     6px;
+
+  /* Shadows — neutral, modern, not warm. Subtle layering. */
+  --shadow-xs:     0 1px 2px rgba(14, 13, 12, 0.04);
+  --shadow-sm:     0 1px 3px rgba(14, 13, 12, 0.05), 0 4px 12px rgba(14, 13, 12, 0.04);
+  --shadow-md:     0 2px 4px rgba(14, 13, 12, 0.06), 0 12px 28px rgba(14, 13, 12, 0.08);
+  --shadow-lg:     0 4px 8px rgba(14, 13, 12, 0.06), 0 24px 56px rgba(14, 13, 12, 0.12);
+  --shadow-focus:  0 0 0 4px rgba(243, 26, 9, 0.18);
+
+  --ease-out:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-soft:     cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:      150ms;
+  --dur-base:      220ms;
+  --dur-slow:      380ms;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html { color-scheme: light; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--cherry-200); color: var(--cherry-900); }
+
+/* ============================================================
+   SEMANTIC TYPE CLASSES
+   ============================================================ */
+
+/* Display — modern, confident sans, very tight letterspacing */
+.display,
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tighter);
+  margin: 0;
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-display-lg);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tighter);
+  margin: 0;
+}
+.display-md {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-display-md);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+/* Serif italic — used as a single-word accent inside an otherwise sans display.
+   e.g. "Let's talk money — for women." with `<em>women</em>` styled via this. */
+.display em,
+.display-xl em,
+.display-lg em,
+.display-md em,
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+h1, .h1 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 0.5em;
+}
+h2, .h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 0.5em;
+}
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4em;
+}
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h4);
+  font-weight: var(--weight-semibold);
+  line-height: var(--lh-snug);
+  margin: 0 0 0.4em;
+}
+
+p, .body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  font-weight: var(--weight-regular);
+  color: var(--fg-muted);
+}
+.small  { font-size: var(--fs-small);  line-height: var(--lh-normal); }
+.micro  { font-size: var(--fs-micro);  line-height: var(--lh-normal); }
+
+/* Eyebrow / kicker */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+a, .link {
+  color: var(--link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--link-hover); }
+
+strong, b { font-weight: var(--weight-semibold); }
+em, i { font-style: italic; }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-muted);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+/* Helpers */
+.fg-accent  { color: var(--accent); }
+.fg-muted   { color: var(--fg-muted); }
+.fg-on-deep { color: var(--fg-on-deep); }
+.bg-soft    { background: var(--bg-soft); }
+.bg-muted   { background: var(--bg-muted); }
+.bg-deep    { background: var(--bg-deep); color: var(--fg-on-deep); }
+.bg-cherry  { background: var(--bg-cherry); color: var(--fg-on-cherry); }

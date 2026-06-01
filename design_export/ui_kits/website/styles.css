@@ -1,0 +1,148 @@
+/* Cherry website UI kit — modern fintech (.io) */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); }
+.container { max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--gutter); }
+.container-text { max-width: var(--container-text); margin: 0 auto; padding: 0 var(--gutter); }
+.container-narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Buttons */
+.btn { font-family: var(--font-sans); font-size: 15px; font-weight: 500; padding: 13px 26px; border-radius: var(--radius-pill); border: 1px solid transparent; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out); white-space: nowrap; letter-spacing: -0.005em; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); color: #fff; }
+.btn-dark { background: var(--neutral-900); color: #fff; }
+.btn-dark:hover { background: var(--neutral-700); color: #fff; }
+.btn-outline { background: transparent; color: var(--fg); border-color: var(--border-strong); }
+.btn-outline:hover { border-color: var(--fg); color: var(--fg); }
+.btn-ghost-deep { background: transparent; color: #fff; border-color: rgba(255,255,255,0.22); }
+.btn-ghost-deep:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.btn-sm { padding: 8px 16px; font-size: 13px; }
+
+/* Section rhythm */
+.section { padding: var(--space-9) 0; }
+.section-tight { padding: var(--space-7) 0; }
+.section-soft { background: var(--bg-soft); }
+.section-deep { background: var(--bg-deep); color: var(--fg-on-deep); }
+.section-deep h2, .section-deep h3 { color: var(--fg-on-deep); }
+
+/* Eyebrow */
+.kicker { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 var(--space-4); }
+.section-deep .kicker { color: var(--cherry-300); }
+
+/* Wordmark */
+.wordmark { display: inline-flex; align-items: center; gap: 8px; color: var(--fg); font-family: var(--font-sans); font-size: 22px; font-weight: 700; letter-spacing: -0.03em; text-decoration: none; }
+.wordmark svg { width: 22px; height: 22px; color: var(--accent); }
+.section-deep .wordmark, .on-deep .wordmark { color: #fff; }
+
+/* Form */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: 13px; font-weight: 500; color: var(--fg); }
+.field input, .field textarea { font-family: inherit; font-size: 15px; padding: 13px 16px; border-radius: var(--radius-lg); border: 1px solid var(--border-strong); background: var(--white); color: var(--fg); transition: border-color var(--dur-fast), box-shadow var(--dur-fast); letter-spacing: -0.005em; }
+.field textarea { min-height: 100px; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: var(--shadow-focus); }
+.field input::placeholder, .field textarea::placeholder { color: var(--fg-subtle); }
+
+/* Cards */
+.card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; }
+.card-dark { background: var(--neutral-900); color: #fff; border: none; border-radius: var(--radius-xl); padding: 28px; }
+.card-cherry { background: var(--accent); color: #fff; border: none; border-radius: var(--radius-xl); padding: 28px; }
+
+/* ============================================================
+   MOBILE NAV OVERLAY
+   ============================================================ */
+.nav-burger {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--fg);
+  cursor: pointer;
+  padding: 11px 8px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--dur-fast);
+}
+.nav-burger:active { background: var(--bg-soft); }
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--neutral-900);
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes navSlideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes navFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE — mobile improvements
+   ============================================================ */
+@media (max-width: 900px) {
+  /* Section vertical rhythm — step down */
+  .section       { padding: 64px 0; }
+  .section-tight { padding: 40px 0; }
+
+  /* Hero section: reduce top whitespace — override inline style with !important */
+  .hero-section { padding-top: 16px !important; padding-bottom: 40px !important; }
+
+  /* Touch targets */
+  .btn { min-height: 44px; }
+
+  /* Prevent iOS auto-zoom on focus */
+  .field input, .field textarea { font-size: 16px; }
+
+  /* Nav overlay */
+  .nav-burger          { display: inline-flex; }
+  .mobile-nav-overlay  { display: flex; animation: navSlideIn 0.3s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+
+  /* Hero badge — hide; would float over text in single-column */
+  .hero-badge { display: none !important; }
+
+  /* Hero photo: rise to top of card so it's the first thing seen */
+  .hero-photo {
+    order: -1 !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0 !important;
+    background-position: center 15% !important;
+  }
+
+  /* Hero stats: 3 equal columns so nothing orphans */
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 16px !important;
+    margin-top: 32px !important;
+  }
+
+  /* Cards */
+  .card, .card-dark, .card-cherry { padding: 20px; }
+}
+
+@media (max-width: 600px) {
+  .section       { padding: 48px 0; }
+  .section-tight { padding: 32px 0; }
+
+  /* Workshop stats — 2×2 on phone */
+  .grid-stats { grid-template-columns: 1fr 1fr !important; }
+
+  /* Waitlist progress bar — stack on very narrow screens */
+  .waitlist-progress {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    border-radius: var(--radius-lg) !important;
+  }
+  .waitlist-card { padding: 20px !important; }
+}

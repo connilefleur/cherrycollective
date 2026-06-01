@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Radius & Shadow</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../spacing.css">
+<style>
+  body{margin:0;padding:28px;background:var(--bg-paper);font-family:var(--font-body);font-size:11px;color:var(--fg-muted);}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .card{background:var(--white);height:80px;display:flex;align-items:flex-end;padding:10px;}
+  .name{font-weight:600;color:var(--fg);font-size:11px;}
+  .row{display:flex;flex-direction:column;gap:6px;}
+  h4{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-muted);margin:0 0 12px;}
+</style></head><body>
+<h4>Radius</h4>
+<div class="grid" style="margin-bottom:24px">
+  <div class="row"><div class="card" style="border-radius:var(--radius-sm)"></div><span class="name">--radius-sm <span style="color:var(--fg-muted);font-weight:400">6</span></span></div>
+  <div class="row"><div class="card" style="border-radius:var(--radius-md)"></div><span class="name">--radius-md <span style="color:var(--fg-muted);font-weight:400">12</span></span></div>
+  <div class="row"><div class="card" style="border-radius:var(--radius-lg)"></div><span class="name">--radius-lg <span style="color:var(--fg-muted);font-weight:400">20</span></span></div>
+  <div class="row"><div class="card" style="border-radius:var(--radius-pill);background:var(--cherry-500)"></div><span class="name">--radius-pill ★</span></div>
+</div>
+<h4>Shadow</h4>
+<div class="grid">
+  <div class="row"><div class="card" style="border-radius:14px;box-shadow:var(--shadow-soft)"></div><span class="name">--shadow-soft</span></div>
+  <div class="row"><div class="card" style="border-radius:14px;box-shadow:var(--shadow-lift)"></div><span class="name">--shadow-lift</span></div>
+  <div class="row"><div class="card" style="border-radius:14px;box-shadow:var(--shadow-deep)"></div><span class="name">--shadow-deep</span></div>
+  <div class="row"><div class="card" style="border-radius:14px;box-shadow:var(--shadow-focus);background:var(--white)"></div><span class="name">--shadow-focus</span></div>
+</div>
+</body></html>

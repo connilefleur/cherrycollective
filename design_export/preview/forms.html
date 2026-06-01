@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Form fields</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../spacing.css">
+<style>
+  body{margin:0;padding:28px;background:var(--bg);font-family:var(--font-sans);}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+  label{font-size:13px;font-weight:500;color:var(--fg);}
+  input,textarea{font-family:inherit;font-size:15px;padding:13px 16px;border-radius:var(--radius-lg);border:1px solid var(--border-strong);background:var(--white);color:var(--fg);transition:border-color var(--dur-fast),box-shadow var(--dur-fast);letter-spacing:-0.005em;}
+  textarea{min-height:80px;resize:vertical;}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--shadow-focus);}
+  input::placeholder,textarea::placeholder{color:var(--fg-subtle);}
+  .help{font-size:12px;color:var(--fg-muted);margin:-4px 4px 0;}
+</style></head><body>
+<div class="field"><label for="n">Vorname</label><input id="n" type="text" placeholder="Wie heißt du?"></div>
+<div class="field"><label for="e">E-Mail</label><input id="e" type="email" value="anna@beispiel.de"></div>
+<div class="field"><label for="m">Warum möchtest du bei Cherry mitmachen?</label><textarea id="m" placeholder="Erzähl uns kurz von dir."></textarea><span class="help">Kein Druck. Keine Verpflichtung.</span></div>
+</body></html>

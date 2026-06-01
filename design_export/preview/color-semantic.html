@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Color — Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px;background:var(--bg);font-family:var(--font-sans);}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .row{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--white);}
+  .chip{width:40px;height:40px;border-radius:8px;flex-shrink:0;border:1px solid var(--border);}
+  .meta{font-size:12px;line-height:1.3;}
+  .meta .v{font-weight:600;color:var(--fg);font-feature-settings:"ss01";letter-spacing:-0.01em;}
+  .meta .t{color:var(--fg-muted);}
+  .label{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-muted);margin:0 0 12px;}
+</style></head><body>
+<p class="label">Semantic tokens</p>
+<div class="grid">
+  <div class="row"><div class="chip" style="background:var(--bg)"></div><div class="meta"><div class="v">--bg</div><div class="t">page background (white)</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--bg-soft)"></div><div class="meta"><div class="v">--bg-soft</div><div class="t">alt section</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--bg-deep)"></div><div class="meta"><div class="v">--bg-deep</div><div class="t">dark panel / footer</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--accent)"></div><div class="meta"><div class="v">--accent</div><div class="t">primary CTA, links</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--accent-soft)"></div><div class="meta"><div class="v">--accent-soft</div><div class="t">tinted badges</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--fg)"></div><div class="meta"><div class="v">--fg</div><div class="t">primary text</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--fg-muted)"></div><div class="meta"><div class="v">--fg-muted</div><div class="t">secondary text</div></div></div>
+  <div class="row"><div class="chip" style="background:var(--border-strong)"></div><div class="meta"><div class="v">--border</div><div class="t">hairline dividers</div></div></div>
+</div>
+</body></html>

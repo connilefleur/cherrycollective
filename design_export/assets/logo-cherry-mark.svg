@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-label="Cherry mark">
+  
+  <circle cx="11" cy="22" r="6" fill="currentColor"></circle>
+  <circle cx="22" cy="22" r="6" fill="currentColor"></circle>
+  <path d="M16 4 C 14 9, 11 13, 9 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"></path>
+  <path d="M16 4 C 18 9, 21 13, 23 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"></path>
+  <ellipse cx="18.5" cy="4" rx="3" ry="1.5" fill="currentColor" transform="rotate(-15 18.5 4)"></ellipse>
+</svg>

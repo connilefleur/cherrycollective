@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../spacing.css">
+<style>
+  body{margin:0;font-family:var(--font-sans);}
+  .top{padding:24px 28px;background:var(--bg);}
+  .deep{padding:24px 28px;background:var(--bg-deep);}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-muted);margin:0 0 12px;}
+  .deep .label{color:rgba(255,255,255,0.55);}
+  button{font-family:inherit;font-size:15px;font-weight:500;padding:13px 26px;border-radius:var(--radius-pill);border:1px solid transparent;cursor:pointer;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);letter-spacing:-0.01em;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-hover);}
+  .btn-dark{background:var(--neutral-900);color:#fff;}
+  .btn-dark:hover{background:var(--neutral-700);}
+  .btn-outline{background:transparent;color:var(--fg);border-color:var(--border-strong);}
+  .btn-outline:hover{border-color:var(--fg);}
+  .btn-ghost-deep{background:transparent;color:#fff;border-color:rgba(255,255,255,0.22);}
+  .btn-ghost-deep:hover{background:rgba(255,255,255,0.08);}
+  .btn-sm{padding:8px 16px;font-size:13px;}
+</style></head><body>
+<div class="top">
+  <p class="label">On white</p>
+  <div class="row">
+    <button class="btn-primary">Jetzt mitmachen</button>
+    <button class="btn-dark">Was ist Cherry?</button>
+    <button class="btn-outline">Mehr erfahren</button>
+    <button class="btn-primary btn-sm">Auf die Warteliste</button>
+  </div>
+</div>
+<div class="deep">
+  <p class="label">On dark / cherry</p>
+  <div class="row">
+    <button class="btn-primary">Jetzt mitmachen</button>
+    <button class="btn-ghost-deep">Was ist Cherry?</button>
+    <button class="btn-ghost-deep btn-sm">Community</button>
+  </div>
+</div>
+</body></html>

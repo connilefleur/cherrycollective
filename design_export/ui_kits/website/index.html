@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cherry — Let's talk money</title>
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <link rel="stylesheet" href="../../spacing.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hide-md { display: flex; }
+    .show-md { display: none; }
+    @media (max-width: 900px) {
+      .hide-md { display: none !important; }
+      .show-md { display: inline-flex !important; }
+      .hide-sm { display: none !important; }
+      /* Collapse multi-column grids to single column */
+      .grid-2, .grid-tiers, .footer-grid, .founders-grid, .grid-3-checklist, .footer-top { grid-template-columns: 1fr !important; }
+      /* Stats get 2×2 at tablet, overridden to 2×2 again at phone below */
+      .grid-stats { grid-template-columns: 1fr 1fr !important; }
+      .evening { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .hero-grid { grid-template-columns: 1fr !important; }
+      /* Hero photo height and border-radius handled in styles.css */
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .grid-stats, .grid-tiers { grid-template-columns: 1fr 1fr !important; }
+      .founders-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="Header.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="WasIstCherry.jsx"></script>
+  <script type="text/babel" src="Workshop.jsx"></script>
+  <script type="text/babel" src="IstCherryFurDich.jsx"></script>
+  <script type="text/babel" src="Founders.jsx"></script>
+  <script type="text/babel" src="Waitlist.jsx"></script>
+  <script type="text/babel" src="Community.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      const onNav = (id) => {
+        if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      return (
+        <>
+          <Header onNav={onNav} />
+          <Hero onNav={onNav} />
+          <WasIstCherry />
+          <Workshop />
+          <IstCherryFurDich />
+          <Founders />
+          <Waitlist />
+          <Community />
+          <Footer />
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('app')).render(<App />);
+  </script>
+</body>
+</html>

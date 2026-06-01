@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../spacing.css">
+<style>
+  body{margin:0;padding:24px;background:var(--bg);font-family:var(--font-sans);display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .card{background:var(--white);border-radius:16px;padding:22px;border:1px solid var(--border);}
+  .card.dark{background:var(--neutral-900);color:#fff;border:none;}
+  .card.cherry{background:var(--bg-cherry);color:#fff;border:none;}
+  .num{font-family:var(--font-sans);font-weight:700;font-size:48px;line-height:1;letter-spacing:-0.04em;color:var(--fg);margin-bottom:8px;}
+  .card.dark .num,.card.cherry .num{color:#fff;}
+  h4{margin:0 0 4px;font-size:15px;letter-spacing:-0.01em;}
+  p{margin:0;font-size:13px;color:var(--fg-muted);line-height:1.5;}
+  .card.dark p{color:rgba(255,255,255,0.65);}
+  .card.cherry p{color:rgba(255,255,255,0.85);}
+  .stat{display:flex;gap:18px;align-items:baseline;}
+  .stat .big{font-weight:700;font-size:56px;line-height:1;letter-spacing:-0.04em;}
+  .stat .lab b{color:var(--fg);font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="num">3</div>
+  <h4>Abende hintereinander</h4>
+  <p>Jeweils 18:30 Uhr. Knapp vier Stunden insgesamt.</p>
+</div>
+<div class="card">
+  <div class="num">14</div>
+  <h4>Plätze pro Workshop</h4>
+  <p>Nicht mehr, damit es persönlich bleibt.</p>
+</div>
+<div class="card cherry">
+  <div class="stat">
+    <div class="big">5<span style="opacity:0.7">/14</span></div>
+    <div class="lab"><b style="color:#fff">Plätze noch frei</b><br><span style="opacity:0.85;font-size:13px">Trag dich auf die Warteliste ein.</span></div>
+  </div>
+</div>
+<div class="card dark">
+  <div class="num">€0</div>
+  <h4>Kostenlos</h4>
+  <p>Keine versteckten Kosten, kein Kleingedrucktes, keine Bank im Hintergrund.</p>
+</div>
+</body></html>

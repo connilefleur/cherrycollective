@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+
+# Working uploads and generated image scratch
+uploads/
+design_export/uploads/
+
+# Large binary archives
+*.zip
